@@ -1,3 +1,4 @@
+from asyncore import write
 from PyPDF2 import PdfFileReader, PdfFileWriter 
 
 file_path = 'Summary2.pdf'
@@ -59,12 +60,10 @@ def main():
     with open('NotesFile.txt', 'w') as f:
         for page_num in range(pdf.numPages):
             print('Page: {0}'.format(page_num))
-            pageObj = pdf.getPage(page_num);
+            pageObj = pdf.getPage(page_num)
             try: 
                 text = pageObj.extract_text()
-                print(''.center(100, '-'))
             except:
-                print('Error')
                 pass
             else:
                 lines = text.split('\n')
@@ -72,9 +71,7 @@ def main():
                     if(not checkValidLine(line, lines)):
                         continue
                     if(flag == False):
-                        print('pass')
                         continue
-                    print('print')
                     if(not checkPrintAuthorANDTitle(page_num, line, f)):
                         continue
                     if(checkLast4Lines(page_num, line, lines)):
@@ -94,7 +91,7 @@ def main():
                             lastSection = ParagraphName.split(',')
                             if(lastSection.__len__() == 2 and lastSection[1].split('.')[0] == ' p'):
                                 Paragraph=False
-                                f.write(''+ lastSection[0] + '\n')
+                                writeLine(lastSection[0], f)
                                 continue
                         Paragraph=False
                     else:
@@ -104,3 +101,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    print('Done!')
