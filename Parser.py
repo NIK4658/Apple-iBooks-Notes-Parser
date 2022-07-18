@@ -1,6 +1,5 @@
 from PyPDF2 import PdfFileReader, PdfFileWriter 
 
-
 file_path = 'Summary2.pdf'
 pdf = PdfFileReader(file_path)
 flag = False
@@ -10,12 +9,33 @@ Paragraph = True
 ParagraphName = ''
 
 
+def writeLine(line, f):
+    try:
+        f.write(''+ line + '\n')
+    except:
+        f.write('AN ERROR IS OCCURRED WHILE WRITING TO WRITE THIS LINE \n')
+
+def checkLast4Lines(page_num, line, lines):
+    if(page_num==pdf.getNumPages()-1 and (line == lines[lines.__len__()-1] or line == lines[lines.__len__()-2] or line == lines[lines.__len__()-3] or line == lines[lines.__len__()-4])): 
+        return True
+    return False
+
+def checkPrintAuthorANDTitle(page_num, line, f):
+    global author
+    global Title
+    if(page_num==0 and not Title):
+        f.write('Title: '+ line + '\n')
+        Title=True
+        return False
+    if(page_num==0 and not author):
+        f.write('Author: '+ line + '\n')
+        author=True
+        return False
+    return True
 
 def checkValidLine(line, lines):
     global flag
 
-    if(line == lines[0] or line == lines[1]):
-        return False
     if(line.split(' ').__len__() > 2):
         if(line.split(' ')[2] == '2022'):
             return False
@@ -25,7 +45,6 @@ def checkValidLine(line, lines):
         flag = True
         return False
     return True
-
 
 
 def main():
@@ -50,31 +69,22 @@ def main():
             else:
                 lines = text.split('\n')
                 for line in lines:
-                    if (line == lines[0] or line == lines[1]):
-                        pass
-                    if (line.split(' ').__len__() > 2):
-                        if(line.split(' ')[2] == '2022'):
-                            continue
-                    if(line == ''):
-                        continue
-                    if(line == 'NOTE DA'):
-                        flag = True
+                    if(not checkValidLine(line, lines)):
                         continue
                     if(flag == False):
                         print('pass')
                         continue
                     print('print')
-                    if(page_num==0 and not Title):
-                        f.write('Title: '+ line + '\n')
-                        Title=True
+                    if(not checkPrintAuthorANDTitle(page_num, line, f)):
                         continue
-                    if(page_num==0 and not author):
-                        f.write('Author: '+ line + '\n')
-                        author=True
+                    if(checkLast4Lines(page_num, line, lines)):
                         continue
-                    if(page_num==pdf.getNumPages()-1 and (line == lines[lines.__len__()-1] or line == lines[lines.__len__()-2] or line == lines[lines.__len__()-3] or line == lines[lines.__len__()-4])): 
-                        continue
+
                     if(Paragraph):
+                        linesplitted=line.split(',')
+                        if(linesplitted.__len__() == 2 and linesplitted[1][0]+linesplitted[1][1]+linesplitted[1][2] == ' p.'):
+                            line = linesplitted[0]
+
                         if(line == ParagraphName):
                             Paragraph = False
                             continue
@@ -89,12 +99,8 @@ def main():
                         Paragraph=False
                     else:
                         Paragraph=True
-                    try:
-                        f.write(''+ line + '\n')
-                    except:
-                        f.write('AN ERROR IS OCCURRED WHILE WRITING TO WRITE THIS LINE \n')
+                    writeLine(line, f)
         f.close()
-
 
 if __name__ == "__main__":
     main()
