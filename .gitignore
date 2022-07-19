@@ -1,6 +1,6 @@
 *.pdf
 *.txt
 Input/*
-!Input/README.md
+!Input/.placeholder
 Output/*
-!Output/README.md
+!Output/.placeholder
