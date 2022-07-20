@@ -16,12 +16,12 @@ ___
 ## **USAGE:**
  1. Insert all the **PDF** files you want to process into the **Input** folder. 
  2. **Run the script**.
- 3. All created .txt files can be found in the **Output** folder
+ 3. All created .txt files can be found in the **Output** folder.
 
 ---
 
 ## **PDF REQUIREMENTS:**
- - Each line must be an **alternation** of TitleParagraph - Note
+ - Each line must be an **alternation** of TitleParagraph - Note.
  - Each TitleParagraph/Note must remain on a **single line** and not break through dividing into several lines.
 
 
