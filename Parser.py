@@ -21,13 +21,13 @@ def progress_bar(current, total, bar_length=20):
     # This sleep is ONLY FOR GRAPHICS PURPOSE, can be disabled or turnedo to 0 if full performance is needed
     time.sleep(0.01)
 
+# Check Numper of PDF files in the directory
 def getNumPDF(onlyfiles):
     nPDF = 0
     for file in onlyfiles:
         if(file.split('.')[1] == 'pdf'):
             nPDF += 1   
     return nPDF
-
 
 # Reset the global variables
 def restoreAll():
@@ -159,7 +159,6 @@ def main(filename):
                     writeLine(line, f)
         # After the loop is done, close the .txt file
         f.close()
-
 
 #Main Program
 if __name__ == "__main__":
