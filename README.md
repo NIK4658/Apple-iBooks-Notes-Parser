@@ -1,4 +1,4 @@
-# AppleBooks-Notes-Parser 📚
+# AppleBooks-Notes-Parser 📚 ![StatusBadge](https://badgen.net/badge/Status/Completed/green)
 ## This Python script is used to export all the **notes in a book** as a **text file**. 
 ### These are contained within a PDF file. 
 **In the PDF file**, each Note shows above it the title of the paragraph in which it is contained, this leads to a lot of **confusion** in addition to the useless **waste of space.** \
