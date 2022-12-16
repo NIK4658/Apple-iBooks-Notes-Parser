@@ -1,4 +1,7 @@
-# AppleBooks-Notes-Parser 📚 ![StatusBadge](https://badgen.net/badge/Status/Completed/green)
+# AppleBooks-Notes-Parser 📚 ![StatusBadge](https://badgen.net/badge/Status/Completed/green) 
+
+![Topic](https://img.shields.io/badge/PROJECT-Deprecated-red?style=for-the-badge) ![Topic](https://img.shields.io/badge/BETTER%20SOLUTION-AVAILABLE-success?style=for-the-badge)
+
 ## This Python script is used to export all the **notes in a book** as a **text file**. 
 ### These are contained within a PDF file. 
 **In the PDF file**, each Note shows above it the title of the paragraph in which it is contained, this leads to a lot of **confusion** in addition to the useless **waste of space.** \
@@ -23,6 +26,19 @@ ___
 ## **PDF REQUIREMENTS:**
  - Each line must be an **alternation** of TitleParagraph - Note.
  - Each TitleParagraph/Note must remain on a **single line** and not break through dividing into several lines.
+ 
+---
 
+# **UPDATE:**
 
+*December 2022*
+
+With the new version of IOS, **Apple has disabled the function of exporting highlighted text via email**, so *it is no longer possible to create pdf*.
+This project has been **marked as deprecated**.
+*It still works with already existing pdfs*, but since you can't create new ones, *this program has become almost useless*.
+
+Anyway, **I have another project that works much better than this one**, taking information from the **main database of the app**, *it's more reliable, accurate and will never become obsolete.*
+
+*Check out my other repository:* ([**Apple-iBooks-Highlighted-Text-Exporter**](https://github.com/NIK4658/Apple-iBooks-Highlighted-Text-Exporter)). 
+---
 
