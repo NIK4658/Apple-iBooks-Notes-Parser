@@ -37,8 +37,17 @@ With the new version of IOS, **Apple has disabled the function of exporting high
 This project has been **marked as deprecated**.
 *It still works with already existing pdfs*, but since you can't create new ones, *this program has become almost useless*.
 
-Anyway, **I have another project that works much better than this one**, taking information from the **main database of the app**, *it's more reliable, accurate and will never become obsolete.*
+However, **I've developed other projects that perform much better than this one**, because they take information directly from the **main database of the app**. 
 
-*Check out my other repository:* ([**Apple-iBooks-Highlighted-Text-Exporter**](https://github.com/NIK4658/Apple-iBooks-Highlighted-Text-Exporter)). 
+*They are more reliable, accurate and will never become obsolete.*
+
+### *Check out my other repositories:*
+
+[Apple-iBooks-Database-Exporter](https://github.com/NIK4658/Apple-iBooks-Database-Exporter)
 ---
 
+[Apple-iBooks-Highlighted-Text-Parser](https://github.com/NIK4658/Apple-iBooks-Highlighted-Text-Parser)
+---
+
+[**Apple-iBooks-Highlighted-Text-Exporter**](https://github.com/NIK4658/Apple-iBooks-Highlighted-Text-Exporter) 
+---
