@@ -1,4 +1,4 @@
-# AppleBooks-Notes-Parser 📚 ![StatusBadge](https://badgen.net/badge/Status/Completed/green) 
+# Apple-iBooks-Notes-Parser 📚 ![StatusBadge](https://badgen.net/badge/Status/Completed/green) 
 
 ![Topic](https://img.shields.io/badge/PROJECT-Deprecated-red?style=for-the-badge) ![Topic](https://img.shields.io/badge/BETTER%20SOLUTION-AVAILABLE-success?style=for-the-badge)
 
